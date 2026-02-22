@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Taller de Tienda Web</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-content">
+      <div class="brand">
+        <span class="brand-mark">WS</span>
+        <span class="brand-text">Web Shop Starter</span>
+      </div>
+      <nav class="main-nav">
+        <a href="#productos">Productos</a>
+        <a href="#guia">Guía</a>
+        <a href="#sobre">Sobre el proyecto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-content">
+        <div class="hero-copy">
+          <h1>Base profesional para tu tienda web</h1>
+          <p>
+            Este proyecto está pensado como punto de partida para que aprendas a
+            construir y mejorar una tienda online moderna usando solo HTML, CSS y JavaScript.
+          </p>
+          <div class="hero-actions">
+            <button type="button" class="btn primary" data-action="scroll-productos">
+              Ver productos de ejemplo
+            </button>
+            <button type="button" class="btn ghost" data-action="scroll-guia">
+              Seguir la guía de construcción
+            </button>
+          </div>
+        </div>
+        <div class="hero-panel">
+          <div class="hero-card">
+            <div class="hero-card-header">
+              <span class="hero-label">Vista previa</span>
+              <span class="hero-pill">Template educativo</span>
+            </div>
+            <ul class="hero-list">
+              <li>Estructura clara y extensible</li>
+              <li>Diseño responsive listo para producción</li>
+              <li>Código organizado para ir añadiendo features</li>
+              <li>Preparado para subir a GitHub y GitHub Pages</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="productos" class="section">
+      <div class="container section-header">
+        <div>
+          <h2>Productos de ejemplo</h2>
+          <p>
+            Estos productos son ficticios y sirven para practicar listado, filtros
+            y futuras integraciones de carrito o checkout.
+          </p>
+        </div>
+        <div class="filters">
+          <select id="filter-category">
+            <option value="todos">Todas las categorías</option>
+            <option value="curso">Cursos</option>
+            <option value="recurso">Recursos</option>
+            <option value="servicio">Servicios</option>
+          </select>
+          <select id="filter-sort">
+            <option value="relevancia">Ordenar por relevancia</option>
+            <option value="precio-asc">Precio: de menor a mayor</option>
+            <option value="precio-desc">Precio: de mayor a menor</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="container">
+        <div id="product-grid" class="product-grid"></div>
+      </div>
+    </section>
+
+    <section id="guia" class="section section-alt">
+      <div class="container guia-grid">
+        <div>
+          <h2>Cómo seguir construyendo esta tienda</h2>
+          <p>
+            La idea es que uses este proyecto como base y vayas añadiendo
+            funcionalidades paso a paso. Algunas ideas inmediatas:
+          </p>
+        </div>
+        <div class="guia-steps">
+          <article class="step">
+            <h3>1. Extiende el catálogo</h3>
+            <p>
+              Añade nuevos productos en el archivo JavaScript, introduce imágenes,
+              descripciones más completas y etiquetas adicionales.
+            </p>
+          </article>
+          <article class="step">
+            <h3>2. Implementa un carrito simple</h3>
+            <p>
+              Empieza guardando los productos seleccionados en memoria o en
+              localStorage y muestra un pequeño resumen en el encabezado.
+            </p>
+          </article>
+          <article class="step">
+            <h3>3. Mejora el diseño</h3>
+            <p>
+              Juega con la tipografía, colores y espaciados. Asegúrate de que la
+              experiencia en móvil sea tan buena como en escritorio.
+            </p>
+          </article>
+          <article class="step">
+            <h3>4. Publica tu proyecto</h3>
+            <p>
+              Crea un repositorio en GitHub, sube el código y actívalo en GitHub Pages
+              para compartir tu tienda con otras personas.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre" class="section">
+      <div class="container sobre-grid">
+        <div>
+          <h2>Sobre este repositorio</h2>
+          <p>
+            El objetivo es que sea un ejemplo claro, sin frameworks ni herramientas
+            de build, ideal para entender bien la base del front.
+          </p>
+          <p>
+            Más adelante puedes migrar este mismo diseño a React, Vue, Svelte o el
+            framework que prefieras, manteniendo la misma estructura conceptual.
+          </p>
+        </div>
+        <div class="sobre-panel">
+          <ul>
+            <li>Estructura minimalista: HTML, CSS, JavaScript plano</li>
+            <li>Sin dependencias externas obligatorias</li>
+            <li>Pensado para ser fácil de leer en GitHub</li>
+            <li>Licencia abierta para usarlo en tus proyectos</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <span>Web Shop Starter</span>
+      <span>Hecho para aprender y experimentar con front-end</span>
+    </div>
+  </footer>
+
+  <script src="./main.js" defer></script>
+</body>
+</html>
