@@ -1,101 +1,131 @@
-# Web Shop Starter – Base para tu tienda web
+<div align="center">
 
-Proyecto base para aprender a construir una tienda online moderna usando solo HTML, CSS y JavaScript, con una estructura pensada para que sea fácil de leer, extender y publicar en GitHub.
+<img src="docs/img/inicio.png" alt="Web Shop Starter: tienda de demostración Cosecha" width="100%">
 
-## Objetivos del proyecto
+# Web Shop Starter
 
-- Tener una página de tienda sencilla pero con un aspecto profesional.
-- Entender la estructura básica de un proyecto web sin frameworks.
-- Servir como plantilla para que tú (o tus alumnos) podáis seguir añadiendo funcionalidades.
-- Dejar el proyecto listo para subirlo a un repositorio en GitHub y publicarlo con GitHub Pages.
+**Plantilla de tienda en línea en español: catálogo, filtros, carrito y pedidos por WhatsApp.**
+Solo HTML, CSS y JavaScript. Sin frameworks, sin instalar nada y gratis en GitHub Pages.
 
-## Stack y estructura
+[![Demo en vivo](https://img.shields.io/badge/demo-en%20vivo-B3202C?style=flat-square)](https://alejandromayorca.github.io/Proyecto_Pagina_Web/)
+[![Licencia MIT](https://img.shields.io/badge/licencia-MIT-173A2E?style=flat-square)](LICENSE)
+[![Pruebas](https://img.shields.io/github/actions/workflow/status/AlejandroMayorca/Proyecto_Pagina_Web/ci.yml?branch=main&style=flat-square&label=pruebas)](https://github.com/AlejandroMayorca/Proyecto_Pagina_Web/actions)
+[![Sin dependencias](https://img.shields.io/badge/dependencias-0-E9B949?style=flat-square)](package.json)
 
-Tecnologías utilizadas:
+**Español** · [English](README.en.md)
 
-- HTML5 para la estructura.
-- CSS3 (sin preprocesadores) para el diseño y el layout responsive.
-- JavaScript plano para la lógica de productos y filtros.
+[Ver la demo](https://alejandromayorca.github.io/Proyecto_Pagina_Web/) · [Guía paso a paso](docs/README.md) · [Agregar productos](docs/03-productos.md) · [Publicar gratis](docs/04-publicar.md)
 
-Estructura de archivos principal:
+</div>
 
-- `index.html` – Página principal de la tienda: hero, listado de productos, guía y sección “Sobre”.
-- `styles.css` – Estilos globales, layout responsive, tarjetas de producto y secciones.
-- `main.js` – Datos de productos de ejemplo, filtros por categoría y precio, y pequeña interacción.
+---
 
-## Cómo ejecutar el proyecto en local
+## ✨ Qué incluye
 
-No necesitas ninguna herramienta especial: basta con un navegador moderno.
+- 🛍️ **Catálogo** con fotos, etiquetas de *Nuevo* y *Oferta*, precio anterior y porcentaje de descuento.
+- 🔎 **Búsqueda instantánea** que ignora tildes y mayúsculas, **filtros por categoría** y **orden** por precio o nombre.
+- 🔗 **Filtros en la URL**: puedes compartir un enlace directo a "Café, de menor a mayor precio".
+- 🧾 **Ficha de producto** con descripción, detalles, opciones (talla, color, molienda…) y cantidad.
+- 🛒 **Carrito** que se guarda en el navegador, con barra de progreso hacia el envío gratis.
+- 💬 **Pedido por WhatsApp**: el carrito escribe el mensaje con productos, total, nombre y dirección del cliente.
+- 🌗 **Modo claro y oscuro** automático, con botón para cambiarlo.
+- 📱 **Diseño adaptable** a celulares, tabletas y computadores.
+- ♿ **Accesible**: navegable con teclado, textos para lectores de pantalla y movimiento reducido.
+- ⚙️ **Todo se configura en dos archivos**: [`js/config.js`](js/config.js) (tu marca) y [`js/productos.js`](js/productos.js) (tu catálogo).
+- ✅ **Pruebas automáticas** de la lógica del carrito y del catálogo.
 
-1. Clona este repositorio o descarga el código.
-2. Abre el archivo `index.html` con tu navegador (doble clic o “Abrir con…”).
-3. Verás la tienda funcionando con:
-   - Hero de presentación.
-   - Listado de productos de ejemplo.
-   - Filtros por categoría y orden de precio.
-   - Botones de scroll hacia secciones clave y un botón “Añadir al plan” con una interacción básica.
+<table>
+<tr>
+<td width="50%"><img src="docs/img/catalogo.png" alt="Catálogo con búsqueda y filtros"></td>
+<td width="50%"><img src="docs/img/carrito.png" alt="Carrito con pedido por WhatsApp"></td>
+</tr>
+<tr>
+<td width="50%"><img src="docs/img/producto.png" alt="Ficha de producto con opciones"></td>
+<td width="50%"><img src="docs/img/oscuro.png" alt="Modo oscuro"></td>
+</tr>
+</table>
 
-Opcionalmente, si utilizas VS Code, puedes abrir la carpeta y usar la extensión “Live Server” para tener recarga automática.
+## 🚀 Empieza en 2 minutos
 
-## Cómo seguir construyendo la tienda
+1. Pulsa **Use this template → Create a new repository** arriba en esta página (o descarga el ZIP en **Code → Download ZIP**).
+2. Abre `index.html` con doble clic. **Ya funciona**, no necesitas instalar nada.
+3. Cambia el nombre de la tienda y tu número de WhatsApp en [`js/config.js`](js/config.js):
 
-Algunas ideas concretas para evolucionar este proyecto:
-
-1. Extender el catálogo  
-   - Añade nuevos objetos al array de `products` en `main.js`.  
-   - Incluye nuevos tipos (por ejemplo, `plantilla`, `plugin`, etc.) y ajusta el filtro de categorías.  
-   - Integra imágenes reales (añadiendo un campo `image` y mostrándolo en las tarjetas).
-
-2. Implementar un carrito sencillo  
-   - Cuando el usuario pulsa “Añadir al plan”, guarda el producto en `localStorage`.  
-   - Muestra un pequeño resumen en el `header` (por ejemplo, “3 items en tu plan”).  
-   - Crea una sección nueva para ver el detalle del carrito.
-
-3. Mejorar accesibilidad y detalles de diseño  
-   - Revisa el contraste de colores, tamaños de fuente y estados `:hover` / `:focus`.  
-   - Añade `aria-label` o textos alternativos si más adelante incorporas iconos e imágenes.  
-   - Ajusta el diseño en móviles pequeños para que todo siga siendo legible.
-
-4. Conectar con un backend o servicio externo  
-   - Sustituye el array local de `products` por datos que vengan de una API.  
-   - Implementa carga inicial de productos con `fetch` y muestra estados de carga / error.  
-   - Añade autenticación básica si quieres gestionar cuentas de usuario.
-
-## Cómo subirlo a GitHub
-
-1. Crea un nuevo repositorio en GitHub (público o privado).  
-2. En tu máquina, dentro de la carpeta del proyecto, inicializa Git:
-
-   ```bash
-   git init
-   git add .
-   git commit -m "Proyecto base de tienda web"
-   git branch -M main
-   git remote add origin https://github.com/TU_USUARIO/TU_REPO.git
-   git push -u origin main
+   ```js
+   window.TIENDA_CONFIG = {
+     nombre: 'Mi Tienda',
+     eslogan: 'Ropa urbana · Neiva',
+     whatsapp: '573001234567',
+     ...
+   };
    ```
 
-3. Verifica en GitHub que aparecen `index.html`, `styles.css`, `main.js` y este `README.md`.
+4. Pon tus productos en [`js/productos.js`](js/productos.js) y tus fotos en `img/productos/`.
+5. Publícala gratis con GitHub Pages ([guía](docs/04-publicar.md)).
 
-## Cómo publicarlo con GitHub Pages
+> ¿Nunca has hecho una página web? Sigue la **[guía paso a paso](docs/README.md)**, empieza desde cero.
 
-1. En el repositorio de GitHub, ve a **Settings → Pages**.  
-2. En **Source**, elige la rama `main` y la carpeta `/root`.  
-3. Guarda los cambios.  
-4. Después de unos minutos, GitHub te dará una URL del tipo:
+## 📚 Guía paso a paso
 
-   ```
-   https://tu_usuario.github.io/tu_repo/
-   ```
+| | |
+|---|---|
+| [1 · Empezar](docs/01-empezar.md) | Descargar la plantilla, abrirla y editarla |
+| [2 · Personalizar tu marca](docs/02-personalizar.md) | Nombre, WhatsApp, colores, letras, logo y textos |
+| [3 · Agregar productos](docs/03-productos.md) | Fotos, precios, ofertas, opciones y categorías |
+| [4 · Publicar gratis](docs/04-publicar.md) | GitHub Pages y dominio propio |
+| [5 · Ideas para ampliarla](docs/05-ampliar.md) | Pagos en línea, Google Sheets, estadísticas y más |
 
-5. Abre esa URL en el navegador para ver la tienda en producción.
+## 🗂️ Estructura
 
-## Buenas prácticas recomendadas
+```text
+├── index.html          ← la página: secciones y textos fijos
+├── css/styles.css      ← colores, letras y diseño
+├── js/
+│   ├── config.js       ← ✏️ tu marca, WhatsApp, envío y categorías
+│   ├── productos.js    ← ✏️ tu catálogo
+│   ├── tienda.js       ← lógica: búsqueda, carrito, totales y mensaje
+│   └── app.js          ← dibuja la tienda y responde a los clics
+├── img/                ← logo, imágenes de productos y vista previa para redes
+├── fonts/              ← tipografía incluida (funciona sin internet)
+├── docs/               ← guía paso a paso
+├── tests/              ← pruebas automáticas
+└── dev-server.js       ← servidor local opcional (npm start)
+```
 
-- Mantén nombres claros y consistentes en clases CSS, funciones y variables.  
-- Agrupa cambios relacionados en commits pequeños con mensajes descriptivos.  
-- Evita mezclar demasiadas responsabilidades en un solo archivo JavaScript si el proyecto crece.  
-- Añade un archivo `LICENSE` si quieres que otras personas usen libremente tu plantilla.
+Solo necesitas tocar los archivos marcados con ✏️ para tener tu tienda lista.
 
-Este proyecto está pensado como punto de partida profesional y legible, para que puedas seguir construyendo sin depender de herramientas automáticas.
+## 🧪 Para desarrolladores
 
+No hay dependencias ni paso de compilación. Si tienes [Node.js 22+](https://nodejs.org/es):
+
+```bash
+npm start   # servidor local en http://localhost:3000
+npm test    # pruebas de la lógica del carrito, el catálogo y el servidor
+```
+
+## ❓ Preguntas frecuentes
+
+**¿Cobra comisiones o necesita un servidor?**
+No. Es una página estática: la publicas gratis en GitHub Pages, Netlify o cualquier hosting, y los pedidos llegan a tu WhatsApp.
+
+**¿Puedo cobrar con tarjeta?**
+La plantilla confirma el pago por WhatsApp (transferencia, Nequi, contra entrega…). En [Ideas para ampliarla](docs/05-ampliar.md#pagos-en-línea) explicamos cómo agregar un botón de pago.
+
+**¿Puedo usarla para un cliente?**
+Sí. La licencia [MIT](LICENSE) permite uso comercial. Solo conserva el aviso de licencia.
+
+## 🤝 Contribuir
+
+¿Encontraste un error o tienes una idea? [Abre un issue](https://github.com/AlejandroMayorca/Proyecto_Pagina_Web/issues/new/choose) o envía un pull request. Lee [CONTRIBUTING.md](CONTRIBUTING.md): está explicado paso a paso.
+
+Si te sirvió, dale una ⭐ para que más personas la encuentren.
+
+## 📄 Licencia
+
+Código bajo licencia [MIT](LICENSE). La tipografía [Bricolage Grotesque](https://github.com/ateliertriay/bricolage) se incluye bajo la [SIL Open Font License](fonts/OFL-bricolage-grotesque.txt). Los productos y la marca *Cosecha* de la demo son ficticios.
+
+<div align="center">
+
+Creado por **[zPcho](https://github.com/AlejandroMayorca)**
+
+</div>

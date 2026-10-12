@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 📚 Guía paso a paso
+    url: https://github.com/AlejandroMayorca/Proyecto_Pagina_Web/blob/main/docs/README.md
+    about: Personalizar, agregar productos y publicar tu tienda.
+  - name: 🛍️ Ver la demo
+    url: https://alejandromayorca.github.io/Proyecto_Pagina_Web/
+    about: La tienda de demostración en vivo.

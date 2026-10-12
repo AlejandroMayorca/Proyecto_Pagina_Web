@@ -1,0 +1,31 @@
+{
+  "name": "web-shop-starter",
+  "version": "2.0.0",
+  "description": "Plantilla de tienda en línea en español con catálogo, filtros, carrito y pedidos por WhatsApp. Solo HTML, CSS y JavaScript.",
+  "private": true,
+  "scripts": {
+    "start": "node dev-server.js",
+    "test": "node --test"
+  },
+  "keywords": [
+    "ecommerce",
+    "tienda",
+    "whatsapp",
+    "template",
+    "plantilla",
+    "html",
+    "css",
+    "javascript",
+    "github-pages"
+  ],
+  "author": "zPcho (Alejandro Mayorca)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlejandroMayorca/Proyecto_Pagina_Web.git"
+  },
+  "homepage": "https://alejandromayorca.github.io/Proyecto_Pagina_Web/",
+  "engines": {
+    "node": ">=22"
+  }
+}

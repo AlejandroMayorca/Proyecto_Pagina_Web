@@ -3,162 +3,164 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Taller de Tienda Web</title>
-  <link rel="stylesheet" href="./styles.css">
+  <title>Cosecha · Café de especialidad del Huila</title>
+  <meta name="description" content="Tienda de demostración de Web Shop Starter: catálogo con filtros, carrito y pedidos por WhatsApp, hecha solo con HTML, CSS y JavaScript.">
+  <meta name="theme-color" content="#173a2e">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Web Shop Starter · Tienda con pedidos por WhatsApp">
+  <meta property="og:description" content="Plantilla de tienda en línea en español, sin frameworks: catálogo, filtros, carrito y pedidos por WhatsApp.">
+  <meta property="og:image" content="https://alejandromayorca.github.io/Proyecto_Pagina_Web/img/og.png">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/styles.css">
+  <script>
+    try {
+      const tema = localStorage.getItem('tienda:tema');
+      if (tema) document.documentElement.dataset.theme = tema;
+    } catch (error) {}
+  </script>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-content">
-      <div class="brand">
-        <span class="brand-mark">WS</span>
-        <span class="brand-text">Web Shop Starter</span>
-      </div>
-      <nav class="main-nav">
-        <a href="#productos">Productos</a>
-        <a href="#guia">Guía</a>
-        <a href="#sobre">Sobre el proyecto</a>
+  <a class="skip" href="#tienda">Ir a la tienda</a>
+
+  <div class="demo-bar">
+    <p>Tienda de demostración: los productos son ficticios. <a href="https://github.com/AlejandroMayorca/Proyecto_Pagina_Web">Usa esta plantilla gratis</a></p>
+  </div>
+
+  <header class="header">
+    <div class="wrap header__inner">
+      <a class="brand" href="#inicio" aria-label="Inicio">
+        <img src="img/favicon.svg" alt="" width="32" height="32">
+        <span class="brand__name" data-tienda="nombre">Cosecha</span>
+      </a>
+      <nav class="nav" aria-label="Principal">
+        <a href="#tienda">Tienda</a>
+        <a href="#como-pedir">Cómo pedir</a>
+        <a href="#contacto">Contacto</a>
       </nav>
+      <div class="header__actions">
+        <button class="icon-btn" type="button" id="tema" aria-label="Cambiar entre modo claro y oscuro">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path class="sun" d="M12 4V2m0 20v-2m8-8h2M2 12h2m13.66-5.66 1.41-1.41M4.93 19.07l1.41-1.41m0-11.32L4.93 4.93m14.14 14.14-1.41-1.41M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Z"/><path class="moon" d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5Z"/></svg>
+        </button>
+        <button class="cart-btn" type="button" id="abrir-carrito" aria-haspopup="dialog">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14l-1.2 11.1a2 2 0 0 1-2 1.9H8.2a2 2 0 0 1-2-1.9L5 7Zm4 0V6a3 3 0 0 1 6 0v1"/></svg>
+          <span>Carrito</span>
+          <span class="cart-btn__count" id="contador" aria-live="polite">0</span>
+        </button>
+      </div>
     </div>
   </header>
 
-  <main>
+  <main id="inicio">
     <section class="hero">
-      <div class="container hero-content">
-        <div class="hero-copy">
-          <h1>Base profesional para tu tienda web</h1>
-          <p>
-            Este proyecto está pensado como punto de partida para que aprendas a
-            construir y mejorar una tienda online moderna usando solo HTML, CSS y JavaScript.
-          </p>
-          <div class="hero-actions">
-            <button type="button" class="btn primary" data-action="scroll-productos">
-              Ver productos de ejemplo
-            </button>
-            <button type="button" class="btn ghost" data-action="scroll-guia">
-              Seguir la guía de construcción
-            </button>
+      <div class="wrap hero__inner">
+        <div class="hero__copy">
+          <h1>Café del Huila, tostado esta semana.</h1>
+          <p class="hero__lead">Grano de especialidad de fincas de Pitalito, La Plata y Acevedo. Eliges, nos escribes por WhatsApp y te llega a la puerta.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#tienda">Ver los cafés</a>
+            <a class="btn btn--quiet" href="#como-pedir">Cómo pedir</a>
           </div>
         </div>
-        <div class="hero-panel">
-          <div class="hero-card">
-            <div class="hero-card-header">
-              <span class="hero-label">Vista previa</span>
-              <span class="hero-pill">Template educativo</span>
-            </div>
-            <ul class="hero-list">
-              <li>Estructura clara y extensible</li>
-              <li>Diseño responsive listo para producción</li>
-              <li>Código organizado para ir añadiendo features</li>
-              <li>Preparado para subir a GitHub y GitHub Pages</li>
-            </ul>
+        <div class="hero__art">
+          <img src="img/productos/cafe-pitalito.svg" alt="Bolsa de Café Pitalito" width="420" height="420">
+          <p class="stamp" id="sello-tueste"><span>Tostado el</span><strong>lunes</strong></p>
+        </div>
+      </div>
+      <ul class="wrap perks">
+        <li><strong id="perk-envio">Envío gratis</strong><span>desde cierto monto</span></li>
+        <li><strong>Tostamos cada lunes</strong><span>y despachamos el mismo día</span></li>
+        <li><strong>Pagas al confirmar</strong><span>por transferencia o contra entrega</span></li>
+      </ul>
+    </section>
+
+    <section class="shop" id="tienda" aria-labelledby="titulo-tienda">
+      <div class="wrap">
+        <div class="shop__head">
+          <h2 id="titulo-tienda">Tienda</h2>
+          <div class="shop__tools">
+            <label class="search">
+              <span class="visually-hidden">Buscar productos</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m20 20-4.2-4.2M11 18a7 7 0 1 1 0-14 7 7 0 0 1 0 14Z"/></svg>
+              <input type="search" id="busqueda" placeholder="Buscar: chocolate, molino, regalo…" autocomplete="off">
+            </label>
+            <label class="sort">
+              <span class="visually-hidden">Ordenar</span>
+              <select id="orden">
+                <option value="destacados">Destacados primero</option>
+                <option value="precio-asc">Precio: menor a mayor</option>
+                <option value="precio-desc">Precio: mayor a menor</option>
+                <option value="nombre">Nombre: A a Z</option>
+              </select>
+            </label>
           </div>
         </div>
+        <div class="chips" id="categorias" role="group" aria-label="Categorías"></div>
+        <p class="results" id="resultados" aria-live="polite"></p>
+        <div class="grid" id="productos"></div>
       </div>
     </section>
 
-    <section id="productos" class="section">
-      <div class="container section-header">
-        <div>
-          <h2>Productos de ejemplo</h2>
-          <p>
-            Estos productos son ficticios y sirven para practicar listado, filtros
-            y futuras integraciones de carrito o checkout.
-          </p>
-        </div>
-        <div class="filters">
-          <select id="filter-category">
-            <option value="todos">Todas las categorías</option>
-            <option value="curso">Cursos</option>
-            <option value="recurso">Recursos</option>
-            <option value="servicio">Servicios</option>
-          </select>
-          <select id="filter-sort">
-            <option value="relevancia">Ordenar por relevancia</option>
-            <option value="precio-asc">Precio: de menor a mayor</option>
-            <option value="precio-desc">Precio: de mayor a menor</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="container">
-        <div id="product-grid" class="product-grid"></div>
-      </div>
-    </section>
-
-    <section id="guia" class="section section-alt">
-      <div class="container guia-grid">
-        <div>
-          <h2>Cómo seguir construyendo esta tienda</h2>
-          <p>
-            La idea es que uses este proyecto como base y vayas añadiendo
-            funcionalidades paso a paso. Algunas ideas inmediatas:
-          </p>
-        </div>
-        <div class="guia-steps">
-          <article class="step">
-            <h3>1. Extiende el catálogo</h3>
-            <p>
-              Añade nuevos productos en el archivo JavaScript, introduce imágenes,
-              descripciones más completas y etiquetas adicionales.
-            </p>
-          </article>
-          <article class="step">
-            <h3>2. Implementa un carrito simple</h3>
-            <p>
-              Empieza guardando los productos seleccionados en memoria o en
-              localStorage y muestra un pequeño resumen en el encabezado.
-            </p>
-          </article>
-          <article class="step">
-            <h3>3. Mejora el diseño</h3>
-            <p>
-              Juega con la tipografía, colores y espaciados. Asegúrate de que la
-              experiencia en móvil sea tan buena como en escritorio.
-            </p>
-          </article>
-          <article class="step">
-            <h3>4. Publica tu proyecto</h3>
-            <p>
-              Crea un repositorio en GitHub, sube el código y actívalo en GitHub Pages
-              para compartir tu tienda con otras personas.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="sobre" class="section">
-      <div class="container sobre-grid">
-        <div>
-          <h2>Sobre este repositorio</h2>
-          <p>
-            El objetivo es que sea un ejemplo claro, sin frameworks ni herramientas
-            de build, ideal para entender bien la base del front.
-          </p>
-          <p>
-            Más adelante puedes migrar este mismo diseño a React, Vue, Svelte o el
-            framework que prefieras, manteniendo la misma estructura conceptual.
-          </p>
-        </div>
-        <div class="sobre-panel">
-          <ul>
-            <li>Estructura minimalista: HTML, CSS, JavaScript plano</li>
-            <li>Sin dependencias externas obligatorias</li>
-            <li>Pensado para ser fácil de leer en GitHub</li>
-            <li>Licencia abierta para usarlo en tus proyectos</li>
-          </ul>
-        </div>
+    <section class="steps" id="como-pedir" aria-labelledby="titulo-pedir">
+      <div class="wrap">
+        <h2 id="titulo-pedir">Cómo pedir</h2>
+        <ol class="steps__list">
+          <li>
+            <h3>Arma tu carrito</h3>
+            <p>Elige tus cafés y la molienda que usas en casa. Si no sabes cuál, deja en grano.</p>
+          </li>
+          <li>
+            <h3>Envía el pedido por WhatsApp</h3>
+            <p>El carrito escribe el mensaje por ti con productos, total y dirección. Solo pulsa enviar.</p>
+          </li>
+          <li>
+            <h3>Confirma y recibe</h3>
+            <p>Te respondemos con el pago y la guía de envío. <span id="texto-envio">Envíos a toda Colombia.</span></p>
+          </li>
+        </ol>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-content">
-      <span>Web Shop Starter</span>
-      <span>Hecho para aprender y experimentar con front-end</span>
+  <footer class="footer" id="contacto">
+    <div class="wrap footer__inner">
+      <div>
+        <p class="footer__brand" data-tienda="nombre">Cosecha</p>
+        <p data-tienda="eslogan">Tostadero de café · Huila</p>
+      </div>
+      <ul class="footer__contact" id="datos-contacto"></ul>
+      <p class="footer__credit">Hecho con <a href="https://github.com/AlejandroMayorca/Proyecto_Pagina_Web">Web Shop Starter</a>, plantilla de código abierto por zPcho.</p>
     </div>
   </footer>
 
-  <script src="./main.js" defer></script>
+  <dialog class="modal" id="detalle" aria-labelledby="detalle-nombre">
+    <form method="dialog" class="modal__close-form">
+      <button class="icon-btn modal__close" aria-label="Cerrar">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </form>
+    <div class="modal__body" id="detalle-contenido"></div>
+  </dialog>
+
+  <dialog class="drawer" id="carrito" aria-labelledby="carrito-titulo">
+    <div class="drawer__head">
+      <h2 id="carrito-titulo">Tu carrito</h2>
+      <form method="dialog">
+        <button class="icon-btn" aria-label="Cerrar carrito">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+        </button>
+      </form>
+    </div>
+    <div class="drawer__content" id="carrito-contenido"></div>
+  </dialog>
+
+  <div class="toasts" id="avisos" role="status" aria-live="polite" popover="manual"></div>
+
+  <noscript><p class="noscript">Activa JavaScript para ver los productos y usar el carrito.</p></noscript>
+
+  <script src="js/config.js"></script>
+  <script src="js/productos.js"></script>
+  <script src="js/tienda.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>

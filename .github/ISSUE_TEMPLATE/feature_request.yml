@@ -1,0 +1,21 @@
+name: 💡 Proponer una mejora
+description: Una idea para hacer la plantilla más útil
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: ¿Cuál es tu idea?
+    validations:
+      required: true
+  - type: textarea
+    id: para-que
+    attributes:
+      label: ¿Qué problema resuelve para una tienda?
+      placeholder: Por ejemplo, "mis clientes preguntan si hay stock antes de pedir".
+  - type: checkboxes
+    id: ayuda
+    attributes:
+      label: ¿Quieres hacerlo tú?
+      options:
+        - label: Me gustaría enviar un pull request con esta idea
